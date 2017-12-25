@@ -30,3 +30,5 @@ request body is
     "phoneNo": "876876876"
   }
 }
+
+only those validations will work which are tagged with group EmployeeCheck which is an marker interface.
