@@ -1,0 +1,44 @@
+spring:
+  profiles:
+    active: common, development
+    include: myinfo
+---
+#####################################################     `
+#COMMON PROFILE STARTS
+#####################################################
+server:
+    context-path: /logging
+    #Context path of the application.
+
+#####################################################     `
+#COMMON PROFILE ENDS
+#####################################################
+---
+#####################################################
+#DEVELOPMENT PROFILE STARTS
+#####################################################
+spring:
+  profiles: development
+
+logging:
+    logging.config: classpath:logback-spring.xml # Location of the logging configuration file
+    file: logs/development/developmentLogs    # Log file name
+
+#####################################################
+#DEVELOPMENT PROFILE ENDS
+#####################################################
+---
+#####################################################
+#PRODUCTION PROFILE STARTS
+#####################################################
+spring:
+  profiles: development
+
+logging:
+    logging.config: classpath:logback-spring.xml # Location of the logging configuration file
+    file: logs/production/productionlogs    # Log file name
+
+#####################################################
+#PRODUCTION PROFILE ENDS
+#####################################################
+---
